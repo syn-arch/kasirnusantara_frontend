@@ -10,6 +10,47 @@
 
 <body>
 
+    <div class="h-screen flex">
+        <div class="bg-first-gray w-full md:w-1/2 flex justify-center items-center flex-col h-full px-10 lg:px-36">
+            <img src="/src/img/logo.png" alt="" class="w-1/3 md:w-1/4">
+            <h1 class="mt-10 text-5xl font-bold text-primary">Welcome Back</h1>
+            <p class="text-center mt-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur ad cum
+                libero sequi eveniet laborum, distinctio velit tempora quia similique</p>
+            <form method="POST" class="w-full">
+                <div class="mt-10">
+                    <input type="text" placeholder="yourmail@example.com"
+                        class="px-5 py-3 rounded-md border border-gray-300 w-full">
+                </div>
+                <div class="mt-5">
+                    <input type="password" placeholder="password"
+                        class="px-5 py-3 rounded-md border border-gray-300 w-full">
+                </div>
+                <div class="mt-5 flex justify-between">
+                    <div class="left">
+                        <input type="checkbox" name="remember_me" id="remember_me" class="accent-first-red">
+                        <label for="remember_me">Remember Me</label>
+                    </div>
+                    <div class="right">
+                        <a href="#" class="text-primary">Forgot Password?</a>
+                    </div>
+                </div>
+                <div class="mt-5">
+                    <button type="submit"
+                        class="text-center bg-primary w-full text-white rounded-md py-3 hover:bg-tertiary transition-all">Sign
+                        In</button>
+                </div>
+            </form>
+        </div>
+        <div class="bg-white hidden md:w-1/2 md:flex justify-center items-center flex-col h-full px-10 lg:px-36">
+            <img src="/src/img/login.svg" alt="">
+            <h2 class="mt-10 text-3xl font-bold text-primary">Kasir Nusantara</h2>
+            <p class="text-center mt-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est rem voluptate
+                recusandae vero ullam
+                expedita doloremque! Officiis ad odit aut alias eos, optio quia adipisci voluptas ullam nihil. Eligendi,
+                quasi.</p>
+        </div>
+    </div>
+
 </body>
 
 </html>
