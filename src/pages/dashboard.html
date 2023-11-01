@@ -2,14 +2,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/dist/output.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/dist/output.css" />
     <title>Dashboard Page</title>
 </head>
 
 <body class="relative bg-first-gray">
-
     <nav
         class="bg-white ml-0 md:ml-64 flex justify-between py-3 px-5 transition-all duration-1000 border-b border-b-gray-200">
         <button>
@@ -45,22 +44,22 @@
                 </svg>
             </button>
             <button>
-                <img src="https://via.placeholder.com/150x150" alt="" class="rounded-full w-10">
+                <img src="https://via.placeholder.com/150x150" alt="" class="rounded-full w-10" />
             </button>
         </div>
     </nav>
     <aside class="fixed -ml-64 md:ml-0 left-0 top-0 bottom-0 bg-primary w-64 transition-all duration-1000">
         <div class="w-full bg-white py-[7px] flex justify-center border-b border-b-gray-200">
             <a href="/dashboard">
-                <img src="/src/img/logo.png" alt="" class="w-14">
+                <img src="/src/img/logo.png" alt="" class="w-14" />
             </a>
         </div>
         <div>
             <form class="p-5">
                 <div class="relative">
-                    <input type="text" placeholder="Search"
+                    <input type="text" placeholder="Search" autocomplete="off"
                         class="w-full rounded py-2 px-2 outline-none bg-primary border border-secondary text-white"
-                        name="menu">
+                        name="menu" />
                     <svg xmlns="http://www.w3.org/2000/svg"
                         class="icon icon-tabler icon-tabler-search stroke-secondary absolute top-[8px] right-2"
                         width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="none" fill="none"
@@ -71,6 +70,7 @@
                     </svg>
                 </div>
             </form>
+            <hr class="mb-3 bg-secondary border-0 h-px">
             <div>
                 <span class="text-white p-5">Main Menu</span>
                 <a href="#" class="flex justify-between mt-1 mx-4 px-2 py-2 transition-all bg-red-500 rounded">
@@ -118,7 +118,7 @@
                         <path d="M10 18l6 -6l-6 -6v12" />
                     </svg>
                 </a>
-                <div id="master-data" class="min-w-max max-h-0 overflow-hidden" style="transition: max-height 1s;">
+                <div id="master-data" class="min-w-max max-h-0 overflow-hidden" style="transition: max-height 1s">
                     <a href="#">
                         <div class="mt-1 flex hover:bg-slate-500 rounded mx-4 px-2 py-2">
                             <svg xmlns="http://www.w3.org/2000/svg"
@@ -178,34 +178,164 @@
                         <path d="M10 18l6 -6l-6 -6v12" />
                     </svg>
                 </a>
+                <a href="#" class="flex justify-between mt-1 mx-4 px-2 py-2 transition-all rounded hover:bg-red-500">
+                    <div class="flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-share"
+                            width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M4 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                            <path d="M12.5 17h-6.5v-14h-2" />
+                            <path d="M6 5l14 1l-1 7h-13" />
+                            <path d="M16 22l5 -5" />
+                            <path d="M21 21.5v-4.5h-4.5" />
+                        </svg>
+                        <span class="text-white ml-2">Purchases</span>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-caret-right stroke-white" width="28" height="28"
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="none" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M10 18l6 -6l-6 -6v12" />
+                    </svg>
+                </a>
+                <a href="#" class="flex justify-between mt-1 mx-4 px-2 py-2 transition-all rounded hover:bg-red-500">
+                    <div class="flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-share"
+                            width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M4 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                            <path d="M12.5 17h-6.5v-14h-2" />
+                            <path d="M6 5l14 1l-1 7h-13" />
+                            <path d="M16 22l5 -5" />
+                            <path d="M21 21.5v-4.5h-4.5" />
+                        </svg>
+                        <span class="text-white ml-2">Accounts</span>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-caret-right stroke-white" width="28" height="28"
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="none" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M10 18l6 -6l-6 -6v12" />
+                    </svg>
+                </a>
+                <a href="#" class="flex justify-between mt-1 mx-4 px-2 py-2 transition-all rounded hover:bg-red-500">
+                    <div class="flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-share"
+                            width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M4 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                            <path d="M12.5 17h-6.5v-14h-2" />
+                            <path d="M6 5l14 1l-1 7h-13" />
+                            <path d="M16 22l5 -5" />
+                            <path d="M21 21.5v-4.5h-4.5" />
+                        </svg>
+                        <span class="text-white ml-2">Expenses</span>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-caret-right stroke-white" width="28" height="28"
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="none" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M10 18l6 -6l-6 -6v12" />
+                    </svg>
+                </a>
+                <a href="#" class="flex justify-between mt-1 mx-4 px-2 py-2 transition-all rounded hover:bg-red-500">
+                    <div class="flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-share"
+                            width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M4 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                            <path d="M12.5 17h-6.5v-14h-2" />
+                            <path d="M6 5l14 1l-1 7h-13" />
+                            <path d="M16 22l5 -5" />
+                            <path d="M21 21.5v-4.5h-4.5" />
+                        </svg>
+                        <span class="text-white ml-2">Reports</span>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-caret-right stroke-white" width="28" height="28"
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="none" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M10 18l6 -6l-6 -6v12" />
+                    </svg>
+                </a>
+                <a href="#" class="flex justify-between mt-1 mx-4 px-2 py-2 transition-all rounded hover:bg-red-500">
+                    <div class="flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-share"
+                            width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M4 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                            <path d="M12.5 17h-6.5v-14h-2" />
+                            <path d="M6 5l14 1l-1 7h-13" />
+                            <path d="M16 22l5 -5" />
+                            <path d="M21 21.5v-4.5h-4.5" />
+                        </svg>
+                        <span class="text-white ml-2">Utilites</span>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-caret-right stroke-white" width="28" height="28"
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="none" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M10 18l6 -6l-6 -6v12" />
+                    </svg>
+                </a>
+                <a href="#" class="flex justify-between mt-1 mx-4 px-2 py-2 transition-all rounded hover:bg-red-500">
+                    <div class="flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-share"
+                            width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M4 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                            <path d="M12.5 17h-6.5v-14h-2" />
+                            <path d="M6 5l14 1l-1 7h-13" />
+                            <path d="M16 22l5 -5" />
+                            <path d="M21 21.5v-4.5h-4.5" />
+                        </svg>
+                        <span class="text-white ml-2">Settings</span>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-caret-right stroke-white" width="28" height="28"
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="none" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M10 18l6 -6l-6 -6v12" />
+                    </svg>
+                </a>
             </div>
         </div>
     </aside>
-    <main class="ml-0 md:ml-64 p-5 transition-all duration-1000">
-        main
-    </main>
+    <main class="ml-0 md:ml-64 p-5 transition-all duration-1000">main</main>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const toggler = document.querySelector('.toggler');
-            const aside = document.querySelector('aside');
-            const main = document.querySelector('main');
-            const nav = document.querySelector('nav');
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggler = document.querySelector(".toggler");
+            const aside = document.querySelector("aside");
+            const main = document.querySelector("main");
+            const nav = document.querySelector("nav");
 
-            toggler.addEventListener('click', () => {
-                aside.classList.toggle('md:ml-0');
-                main.classList.toggle('md:ml-64');
-                nav.classList.toggle('md:ml-64');
+            toggler.addEventListener("click", () => {
+                aside.classList.toggle("md:ml-0");
+                main.classList.toggle("md:ml-64");
+                nav.classList.toggle("md:ml-64");
             });
 
-            const menuBtn = document.querySelectorAll('.menu-btn');
+            const menuBtn = document.querySelectorAll(".menu-btn");
 
             menuBtn.forEach((btn) => {
-                btn.addEventListener('click', () => {
-                    const target = btn.getAttribute('data-target');
+                btn.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    const target = btn.getAttribute("data-target");
                     const targetEl = document.querySelector(target);
-                    targetEl.style.maxHeight = '200px'
-                    targetEl.style.maxHeight == '200px' ? targetEl.style.maxHeight = null : targetEl.style.maxHeight = '200px'
+                    targetEl.style.maxHeight = targetEl.style.maxHeight === "200px" ? "0px" : "200px";
                 });
             });
         });
