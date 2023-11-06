@@ -11,7 +11,7 @@
 
 <body class="relative bg-first-gray min-h-screen">
     <nav
-        class="bg-white ml-0 lg:ml-64 flex justify-between py-2 px-5 transition-all duration-1000 border-b border-b-gray-200">
+        class="bg-white relative ml-0 lg:ml-64 flex justify-between py-2 px-5 transition-all duration-1000 border-b border-b-gray-200 z-20">
         <button>
             <svg xmlns="http://www.w3.org/2000/svg"
                 class="icon icon-tabler icon-tabler-menu-2 stroke-primary hover:stroke-secondary toggler" width="30"
@@ -122,6 +122,7 @@
             </div>
         </div>
     </nav>
+    <div class="nav-backdrop hidden absolute left-0 right-0 top-0 bottom-0 z-10"></div>
     <aside
         class="lg:fixed absolute -ml-64 lg:ml-0 lg:left-0 left-0 top-0 bottom-0 bg-primary w-64 transition-all duration-1000 z-20">
         <button class="block lg:hidden absolute top-5 right-5 close-sidebar">
@@ -401,7 +402,7 @@
     <div class="absolute hidden sidebar-backdrop top-0 left-0 right-0 bottom-0 bg-black opacity-70 z-10 transition-all">
     </div>
     <main class="ml-0 lg:ml-64 p-5 transition-all duration-1000">
-        <div class="grid w-full gap-5 grid-cols-1 md:grid-cols-4">
+        <div class="grid w-full gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
             <div class="bg-white p-5 rounded border">
                 <span class="font-semibold">Laporan Penjualan</span>
                 <div class="flex mt-2 justify-between">
@@ -483,157 +484,163 @@
                 </div>
             </div>
         </div>
-        <div class="grid mt-5 grid-cols-12 gap-5">
-            <div class="bg-white p-5 border col-span-7">
+        <div class="grid mt-5 grid-cols-1 md:grid-cols-12 gap-5">
+            <div class="bg-white p-5 border col-span12 md:col-span-7">
                 <canvas id="monthlyReport" width="100%"></canvas>
             </div>
-            <div class="bg-white p-5 border col-span-5">
+            <div class="bg-white p-5 border col-span12 md:col-span-5">
                 <h2 class="text-lg font-bold">Produk Terlaris</h2>
-                <table class="w-full mt-3 border border-gray-300">
-                    <thead class="bg-primary text-white">
-                        <tr>
-                            <th class="p-2">No</th>
-                            <th class="p-2">Produk</th>
-                            <th class="p-2">Qty</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-center">
-                        <tr class="bg-gray-300 text-primary">
-                            <td class="p-1">1</td>
-                            <td class="p-1">Komputer</td>
-                            <td class="p-1">238</td>
-                        </tr>
-                        <tr class="text-primary">
-                            <td class="p-1">2</td>
-                            <td class="p-1">Komputer</td>
-                            <td class="p-1">234</td>
-                        </tr>
-                        <tr class="bg-gray-300 text-primary">
-                            <td class="p-1">3</td>
-                            <td class="p-1">Komputer</td>
-                            <td class="p-1">573</td>
-                        </tr>
-                        <tr class="text-primary">
-                            <td class="p-1">4</td>
-                            <td class="p-1">Komputer</td>
-                            <td class="p-1">333</td>
-                        </tr>
-                        <tr class="bg-gray-300 text-primary">
-                            <td class="p-1">5</td>
-                            <td class="p-1">Komputer</td>
-                            <td class="p-1">345</td>
-                        </tr>
-                        <tr class="text-primary">
-                            <td class="p-1">6</td>
-                            <td class="p-1">Komputer</td>
-                            <td class="p-1">980</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="overflow-x-auto">
+                    <table class="w-full mt-3 border border-gray-300">
+                        <thead class="bg-primary text-white">
+                            <tr>
+                                <th class="p-2">No</th>
+                                <th class="p-2">Produk</th>
+                                <th class="p-2">Qty</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-center">
+                            <tr class="bg-gray-300 text-primary">
+                                <td class="p-1">1</td>
+                                <td class="p-1">Komputer</td>
+                                <td class="p-1">238</td>
+                            </tr>
+                            <tr class="text-primary">
+                                <td class="p-1">2</td>
+                                <td class="p-1">Komputer</td>
+                                <td class="p-1">234</td>
+                            </tr>
+                            <tr class="bg-gray-300 text-primary">
+                                <td class="p-1">3</td>
+                                <td class="p-1">Komputer</td>
+                                <td class="p-1">573</td>
+                            </tr>
+                            <tr class="text-primary">
+                                <td class="p-1">4</td>
+                                <td class="p-1">Komputer</td>
+                                <td class="p-1">333</td>
+                            </tr>
+                            <tr class="bg-gray-300 text-primary">
+                                <td class="p-1">5</td>
+                                <td class="p-1">Komputer</td>
+                                <td class="p-1">345</td>
+                            </tr>
+                            <tr class="text-primary">
+                                <td class="p-1">6</td>
+                                <td class="p-1">Komputer</td>
+                                <td class="p-1">980</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-        <div class="grid mt-5 grid-cols-2 gap-5">
+        <div class="grid mt-5 grid-cols-1 md:grid-cols-2 gap-5">
             <div class="bg-white p-5 border">
                 <h2 class="text-lg font-bold">Piutang Penjualan Terbaru</h2>
-                <table class="w-full mt-3 border border-gray-300">
-                    <thead class="bg-primary text-white">
-                        <tr>
-                            <th class="p-2">No</th>
-                            <th class="p-2">Invoice</th>
-                            <th class="p-2">Customer</th>
-                            <th class="p-2">Due Date</th>
-                            <th class="p-2">Total</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-center">
-                        <tr class="bg-gray-300 text-primary">
-                            <td class="p-1">1</td>
-                            <td class="p-1">INV061123001</td>
-                            <td class="p-1">Acep Kurniawan</td>
-                            <td class="p-1">23 Dec 2023</td>
-                            <td class="p-1">Rp156.000.000</td>
-                        </tr>
-                        <tr class="text-primary">
-                            <td class="p-1">2</td>
-                            <td class="p-1">INV061123001</td>
-                            <td class="p-1">Acep Kurniawan</td>
-                            <td class="p-1">23 Dec 2023</td>
-                            <td class="p-1">Rp156.000.000</td>
-                        </tr>
-                        <tr class="bg-gray-300 text-primary">
-                            <td class="p-1">3</td>
-                            <td class="p-1">INV061123001</td>
-                            <td class="p-1">Acep Kurniawan</td>
-                            <td class="p-1">23 Dec 2023</td>
-                            <td class="p-1">Rp156.000.000</td>
-                        </tr>
-                        <tr class="text-primary">
-                            <td class="p-1">4</td>
-                            <td class="p-1">INV061123001</td>
-                            <td class="p-1">Acep Kurniawan</td>
-                            <td class="p-1">23 Dec 2023</td>
-                            <td class="p-1">Rp156.000.000</td>
-                        </tr>
-                        <tr class="bg-gray-300 text-primary">
-                            <td class="p-1">5</td>
-                            <td class="p-1">INV061123001</td>
-                            <td class="p-1">Acep Kurniawan</td>
-                            <td class="p-1">23 Dec 2023</td>
-                            <td class="p-1">Rp156.000.000</td>
-                        </tr>
-                        <tr class="text-primary">
-                            <td class="p-1">6</td>
-                            <td class="p-1">INV061123001</td>
-                            <td class="p-1">Acep Kurniawan</td>
-                            <td class="p-1">23 Dec 2023</td>
-                            <td class="p-1">Rp156.000.000</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="overflow-x-auto">
+                    <table class="w-full mt-3 border border-gray-300">
+                        <thead class="bg-primary text-white">
+                            <tr>
+                                <th class="p-2">No</th>
+                                <th class="p-2">Invoice</th>
+                                <th class="p-2">Customer</th>
+                                <th class="p-2">Due Date</th>
+                                <th class="p-2">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-center">
+                            <tr class="bg-gray-300 text-primary">
+                                <td class="p-1">1</td>
+                                <td class="p-1">INV061123001</td>
+                                <td class="p-1">Acep Kurniawan</td>
+                                <td class="p-1">23 Dec 2023</td>
+                                <td class="p-1">Rp156.000.000</td>
+                            </tr>
+                            <tr class="text-primary">
+                                <td class="p-1">2</td>
+                                <td class="p-1">INV061123001</td>
+                                <td class="p-1">Acep Kurniawan</td>
+                                <td class="p-1">23 Dec 2023</td>
+                                <td class="p-1">Rp156.000.000</td>
+                            </tr>
+                            <tr class="bg-gray-300 text-primary">
+                                <td class="p-1">3</td>
+                                <td class="p-1">INV061123001</td>
+                                <td class="p-1">Acep Kurniawan</td>
+                                <td class="p-1">23 Dec 2023</td>
+                                <td class="p-1">Rp156.000.000</td>
+                            </tr>
+                            <tr class="text-primary">
+                                <td class="p-1">4</td>
+                                <td class="p-1">INV061123001</td>
+                                <td class="p-1">Acep Kurniawan</td>
+                                <td class="p-1">23 Dec 2023</td>
+                                <td class="p-1">Rp156.000.000</td>
+                            </tr>
+                            <tr class="bg-gray-300 text-primary">
+                                <td class="p-1">5</td>
+                                <td class="p-1">INV061123001</td>
+                                <td class="p-1">Acep Kurniawan</td>
+                                <td class="p-1">23 Dec 2023</td>
+                                <td class="p-1">Rp156.000.000</td>
+                            </tr>
+                            <tr class="text-primary">
+                                <td class="p-1">6</td>
+                                <td class="p-1">INV061123001</td>
+                                <td class="p-1">Acep Kurniawan</td>
+                                <td class="p-1">23 Dec 2023</td>
+                                <td class="p-1">Rp156.000.000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div class="bg-white p-5 border">
                 <h2 class="text-lg font-bold">Stok Barang Tipis</h2>
-                <table class="w-full mt-3 border border-gray-300">
-                    <thead class="bg-primary text-white">
-                        <tr>
-                            <th class="p-2">No</th>
-                            <th class="p-2">Produk</th>
-                            <th class="p-2">Stok</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-center">
-                        <tr class="bg-gray-300 text-primary">
-                            <td class="p-1">1</td>
-                            <td class="p-1">Komputer</td>
-                            <td class="p-1">238</td>
-                        </tr>
-                        <tr class="text-primary">
-                            <td class="p-1">2</td>
-                            <td class="p-1">Komputer</td>
-                            <td class="p-1">234</td>
-                        </tr>
-                        <tr class="bg-gray-300 text-primary">
-                            <td class="p-1">3</td>
-                            <td class="p-1">Komputer</td>
-                            <td class="p-1">573</td>
-                        </tr>
-                        <tr class="text-primary">
-                            <td class="p-1">4</td>
-                            <td class="p-1">Komputer</td>
-                            <td class="p-1">333</td>
-                        </tr>
-                        <tr class="bg-gray-300 text-primary">
-                            <td class="p-1">5</td>
-                            <td class="p-1">Komputer</td>
-                            <td class="p-1">345</td>
-                        </tr>
-                        <tr class="text-primary">
-                            <td class="p-1">6</td>
-                            <td class="p-1">Komputer</td>
-                            <td class="p-1">980</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="overflow-x-auto">
+                    <table class="w-full mt-3 border border-gray-300">
+                        <thead class="bg-primary text-white">
+                            <tr>
+                                <th class="p-2">No</th>
+                                <th class="p-2">Produk</th>
+                                <th class="p-2">Stok</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-center">
+                            <tr class="bg-gray-300 text-primary">
+                                <td class="p-1">1</td>
+                                <td class="p-1">Komputer</td>
+                                <td class="p-1">238</td>
+                            </tr>
+                            <tr class="text-primary">
+                                <td class="p-1">2</td>
+                                <td class="p-1">Komputer</td>
+                                <td class="p-1">234</td>
+                            </tr>
+                            <tr class="bg-gray-300 text-primary">
+                                <td class="p-1">3</td>
+                                <td class="p-1">Komputer</td>
+                                <td class="p-1">573</td>
+                            </tr>
+                            <tr class="text-primary">
+                                <td class="p-1">4</td>
+                                <td class="p-1">Komputer</td>
+                                <td class="p-1">333</td>
+                            </tr>
+                            <tr class="bg-gray-300 text-primary">
+                                <td class="p-1">5</td>
+                                <td class="p-1">Komputer</td>
+                                <td class="p-1">345</td>
+                            </tr>
+                            <tr class="text-primary">
+                                <td class="p-1">6</td>
+                                <td class="p-1">Komputer</td>
+                                <td class="p-1">980</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </main>
@@ -649,6 +656,7 @@
             const nav = document.querySelector("nav");
             const closeSidebar = document.querySelector(".close-sidebar");
             const sidebarBackdrop = document.querySelector(".sidebar-backdrop");
+            const navBackdrop = document.querySelector(".nav-backdrop");
 
             toggler.addEventListener("click", () => {
                 aside.classList.toggle("lg:ml-0");
@@ -706,6 +714,8 @@
                 notifEl.classList.remove("flex");
                 profileEl.classList.add("hidden");
                 profileEl.classList.remove("flex");
+
+                navBackdrop.classList.remove('hidden');
             });
 
             notifBtn.addEventListener("click", (e) => {
@@ -719,6 +729,7 @@
                 msgEl.classList.remove("flex");
                 profileEl.classList.add("hidden");
                 profileEl.classList.remove("flex");
+                navBackdrop.classList.remove('hidden');
             });
 
             profileBtn.addEventListener("click", (e) => {
@@ -732,33 +743,23 @@
                 msgEl.classList.remove("flex");
                 notifEl.classList.add("hidden");
                 notifEl.classList.remove("flex");
+                navBackdrop.classList.remove('hidden');
             });
 
-            notifBtn.addEventListener('focusout', function () {
+            navBackdrop.addEventListener('click', function () {
+                this.classList.add('hidden');
+
                 const notifEl = document.querySelector(".notif-el");
                 notifEl.classList.add("hidden");
                 notifEl.classList.remove("flex");
-            });
 
-            profileBtn.addEventListener('focusout', function () {
                 const profileEl = document.querySelector(".profile-el");
                 profileEl.classList.add("hidden");
                 profileEl.classList.remove("flex");
-            });
 
-            msgBtn.addEventListener('focusout', function () {
                 const msgEl = document.querySelector(".msg-el");
                 msgEl.classList.add("hidden");
                 msgEl.classList.remove("flex");
-            });
-
-            const closeToast = document.querySelectorAll(".close-toast");
-            closeToast.forEach((btn) => {
-                btn.addEventListener("click", (e) => {
-                    const toast = btn.parentElement;
-                    toast.classList.remove("opacity-100");
-                    toast.classList.add("opacity-0");
-                })
             });
 
             // line chart
