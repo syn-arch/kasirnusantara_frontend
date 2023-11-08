@@ -484,55 +484,14 @@
                 </div>
             </div>
         </div>
-        <div class="grid mt-5 grid-cols-1 md:grid-cols-12 gap-5">
-            <div class="bg-white p-5 border col-span12 md:col-span-7">
-                <canvas id="monthlyReport" width="100%"></canvas>
+        <div class="grid mt-5 grid-cols-12 md:grid-cols-12 gap-5">
+            <div class="bg-white p-5 border col-span-12 md:col-span-7 grid">
+                <h2 class="text-lg font-bold">Omset Bulanan</h2>
+                <canvas id="monthlyReport" class="w-full"></canvas>
             </div>
-            <div class="bg-white p-5 border col-span12 md:col-span-5">
+            <div class="bg-white p-5 border col-span-12 md:col-span-5">
                 <h2 class="text-lg font-bold">Produk Terlaris</h2>
-                <div class="overflow-x-auto">
-                    <table class="w-full mt-3 border border-gray-300">
-                        <thead class="bg-primary text-white">
-                            <tr>
-                                <th class="p-2">No</th>
-                                <th class="p-2">Produk</th>
-                                <th class="p-2">Qty</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-center">
-                            <tr class="bg-gray-300 text-primary">
-                                <td class="p-1">1</td>
-                                <td class="p-1">Komputer</td>
-                                <td class="p-1">238</td>
-                            </tr>
-                            <tr class="text-primary">
-                                <td class="p-1">2</td>
-                                <td class="p-1">Komputer</td>
-                                <td class="p-1">234</td>
-                            </tr>
-                            <tr class="bg-gray-300 text-primary">
-                                <td class="p-1">3</td>
-                                <td class="p-1">Komputer</td>
-                                <td class="p-1">573</td>
-                            </tr>
-                            <tr class="text-primary">
-                                <td class="p-1">4</td>
-                                <td class="p-1">Komputer</td>
-                                <td class="p-1">333</td>
-                            </tr>
-                            <tr class="bg-gray-300 text-primary">
-                                <td class="p-1">5</td>
-                                <td class="p-1">Komputer</td>
-                                <td class="p-1">345</td>
-                            </tr>
-                            <tr class="text-primary">
-                                <td class="p-1">6</td>
-                                <td class="p-1">Komputer</td>
-                                <td class="p-1">980</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <canvas id="bestSelling" class="w-full"></canvas>
             </div>
         </div>
         <div class="grid mt-5 grid-cols-1 md:grid-cols-2 gap-5">
@@ -763,7 +722,7 @@
             });
 
             // line chart
-            var ctx = document.getElementById('monthlyReport').getContext('2d');
+            var monthlyReport = document.getElementById('monthlyReport').getContext('2d');
 
             // Buat data untuk chart
             var data = {
@@ -778,8 +737,34 @@
             };
 
             // Buat objek chart
-            var myLineChart = new Chart(ctx, {
+            var myLineChart = new Chart(monthlyReport, {
                 type: 'line',
+                data: data,
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // pie chart
+            const bestSelling = document.getElementById('bestSelling').getContext('2d');
+            var data = {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+                datasets: [{
+                    label: 'Bulan',
+                    data: [12, 19, 3, 5, 2],
+                    borderColor: 'rgba(43, 45, 66, 1)',
+                    borderWidth: 2,
+                    fill: true
+                }]
+            };
+
+            // Buat objek chart
+            var myLineChart = new Chart(bestSelling, {
+                type: 'pie',
                 data: data,
                 options: {
                     scales: {
