@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/dist/output.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Dashboard Page</title>
+    <style>
+        .categories::-webkit-scrollbar {
+            width: 10px;
+            height: 8px;
+        }
+
+        .categories::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px transparent;
+            border-radius: 10px;
+        }
+
+        .categories::-webkit-scrollbar-thumb {
+            background: lightgray;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body class="relative bg-first-gray min-h-screen">
+    <nav
+        class="bg-white relative ml-0 lg:ml-64 flex justify-between py-2 px-5 transition-all duration-1000 border-b border-b-gray-200 z-20">
+        <button>
+            <svg xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-menu-2 stroke-primary hover:stroke-secondary toggler" width="30"
+                height="30" viewBox="0 0 24 24" stroke-width="1.4" stroke="#000000" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M4 6l16 0" />
+                <path d="M4 12l16 0" />
+                <path d="M4 18l16 0" />
+            </svg>
+        </button>
+        <div class="right mr-5 flex items-center element-wrapper">
+            <div class="relative element-wrapper">
+                <button class="msg-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-mail mr-5 mb-1 stroke-primary hover:stroke-secondary"
+                        width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="none" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
+                        <path d="M3 7l9 6l9 -6" />
+                    </svg>
+                </button>
+                <div class="hidden bg-white rounded border absolute w-96 -ml-[22rem] top-9 p-4 flex-col msg-el">
+                    <span class="text-center text-gray-600 mb-2">Messages</span>
+                    <hr>
+                    <div class="flex flex-col divide-y divide-solid relative pb-10">
+                        <a href="" class="py-3 flex">
+                            <img src="/src/img/avatar.jpg" alt="" class="h-20 w-20 rounded-full object-cover">
+                            <div class="ml-3">
+                                <p class="font-bold">Messages Title</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+                                </p>
+                            </div>
+                        </a>
+                        <a href="" class="py-3 flex">
+                            <img src="/src/img/avatar.jpg" alt="" class="h-20 w-20 rounded-full object-cover">
+                            <div class="ml-3">
+                                <p class="font-bold">Messages Title</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+                                </p>
+                            </div>
+                        </a>
+                        <a href="" class="py-3 flex">
+                            <img src="/src/img/avatar.jpg" alt="" class="h-20 w-20 rounded-full object-cover">
+                            <div class="ml-3">
+                                <p class="font-bold">Messages Title</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+                                </p>
+                            </div>
+                        </a>
+                        <div class="absolute flex justify-center bottom-1 w-full pt-2">
+                            <button class="text-sky-500">View All</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="relative element-wrapper">
+                <button class="notif-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-bell mr-5 mb-1 stroke-primary hover:stroke-secondary"
+                        width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="none" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path
+                            d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
+                        <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
+                    </svg>
+                </button>
+                <div class="hidden bg-white rounded border absolute w-96 -ml-[22rem] top-9 p-4 flex-col notif-el">
+                    <span class="text-center text-gray-600 mb-2">Notification</span>
+                    <hr>
+                    <div class="flex flex-col divide-y divide-solid relative pb-10">
+                        <a href="" class="py-3">
+                            <p class="font-bold">Notification Title</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae rerum cumque itaque illo
+                            </p>
+                        </a>
+                        <a href="" class="py-3">
+                            <p class="font-bold">Notification Title</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae rerum cumque itaque illo
+                            </p>
+                        </a>
+                        <a href="" class="py-3">
+                            <p class="font-bold">Notification Title</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae rerum cumque itaque illo
+                            </p>
+                        </a>
+                        <div class="absolute flex justify-center bottom-1 w-full pt-2">
+                            <button class="text-sky-500">View All</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="relative element-wrapper">
+                <button class="profile-btn">
+                    <img src="/src/img/avatar.jpg" alt="" class="rounded-full w-10" />
+                </button>
+                <div
+                    class="hidden bg-white rounded border absolute w-96 -ml-[21rem] top-12 p-4 pb-6 flex-col profile-el justify-center items-center">
+                    <img src="/src/img/avatar.jpg" alt="" class="rounded-full w-28" />
+                    <p class="text-lg font-bold mt-3">Kang Adis</p>
+                    <p class="text-gray-600 mb-2">Administrator</p>
+                    <hr>
+                    <a href=""
+                        class="text-center shadow p-2 px-5 rounded hover:bg-red-500 hover:text-white transition-all">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="nav-backdrop hidden absolute left-0 right-0 top-0 bottom-0 z-10"></div>
+    <aside
+        class="lg:fixed absolute -ml-64 lg:ml-0 lg:left-0 left-0 top-0 bottom-0 bg-primary w-64 transition-all duration-1000 z-20">
+        <button class="block lg:hidden absolute top-5 right-5 close-sidebar">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-x stroke-primary hover:stroke-secondary" width="25" height="25"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="none" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M18 6l-12 12" />
+                <path d="M6 6l12 12" />
+            </svg>
+        </button>
+        <div class="w-full bg-white py-[2.5px] flex justify-center border-b border-b-gray-200 shadow-md">
+            <a href="/dashboard">
+                <img src="/src/img/logo.png" alt="" class="w-14" />
+            </a>
+        </div>
+        <div>
+            <form class="p-5">
+                <div class="relative">
+                    <input type="text" placeholder="Search" autocomplete="off"
+                        class="w-full rounded py-2 px-2 outline-none bg-primary border border-secondary text-white"
+                        name="menu" />
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-search stroke-secondary absolute top-[8px] right-2"
+                        width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="none" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                        <path d="M21 21l-6 -6" />
+                    </svg>
+                </div>
+            </form>
+            <hr class="mb-3 bg-secondary border-0 h-px">
+            <span class="text-white p-5">Main Menu</span>
+            <a href="#"
+                class="flex justify-between mt-1 mx-4 px-2 py-2 transition-all bg-red-500 rounded-sm border-l-4">
+                <div class="flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dashboard stroke-white"
+                        width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="none" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 13m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                        <path d="M13.45 11.55l2.05 -2.05" />
+                        <path d="M6.4 20a9 9 0 1 1 11.2 0z" />
+                    </svg>
+                    <span class="text-white ml-2">Dashboard</span>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-caret-right stroke-white"
+                    width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="none" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M10 18l6 -6l-6 -6v12" />
+                </svg>
+            </a>
+            <a href="#"
+                class="flex justify-between mt-1 mx-4 px-2 py-2 transition-transform hover:bg-red-500 border-l-4 border-primary hover:border-white rounded-sm menu-btn"
+                data-target="#master-data">
+                <div class="flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-box-seam" width="28"
+                        height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 3l8 4.5v9l-8 4.5l-8 -4.5v-9l8 -4.5" />
+                        <path d="M12 12l8 -4.5" />
+                        <path d="M8.2 9.8l7.6 -4.6" />
+                        <path d="M12 12v9" />
+                        <path d="M12 12l-8 -4.5" />
+                    </svg>
+                    <span class="text-white ml-2">Master Data</span>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    class="icon icon-tabler icon-tabler-caret-right stroke-white transition-transform" width="28"
+                    height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="none" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M10 18l6 -6l-6 -6v12" />
+                </svg>
+            </a>
+            <div id="master-data" class="min-w-max max-h-0 overflow-hidden" style="transition: max-height 1s">
+                <a href="#">
+                    <div
+                        class="mt-1 flex hover:bg-slate-500 rounded-sm border-primary border-l-4 hover:border-white mx-4 px-2 py-2">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-caret-right stroke-white" width="28" height="28"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="none" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M10 18l6 -6l-6 -6v12" />
+                        </svg>
+                        <span class="text-white ml-2">Data User</span>
+                    </div>
+                </a>
+                <a href="#">
+                    <div
+                        class="mt-1 flex hover:bg-slate-500 rounded-sm border-primary border-l-4 hover:border-white mx-4 px-2 py-2">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-caret-right stroke-white" width="28" height="28"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="none" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M10 18l6 -6l-6 -6v12" />
+                        </svg>
+                        <span class="text-white ml-2">Data Customer</span>
+                    </div>
+                </a>
+                <a href="#">
+                    <div
+                        class="mt-1 flex hover:bg-slate-500 rounded-sm border-primary border-l-4 hover:border-white mx-4 px-2 py-2">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-caret-right stroke-white" width="28" height="28"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="none" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M10 18l6 -6l-6 -6v12" />
+                        </svg>
+                        <span class="text-white ml-2">Data Suppliers</span>
+                    </div>
+                </a>
+            </div>
+            <a href="#"
+                class="flex justify-between mt-1 mx-4 px-2 py-2 transition-transform rounded-sm hover:bg-red-500 border-l-4 border-primary hover:border-white">
+                <div class="flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-share"
+                        width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M4 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                        <path d="M12.5 17h-6.5v-14h-2" />
+                        <path d="M6 5l14 1l-1 7h-13" />
+                        <path d="M16 22l5 -5" />
+                        <path d="M21 21.5v-4.5h-4.5" />
+                    </svg>
+                    <span class="text-white ml-2">POS</span>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-caret-right stroke-white"
+                    width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="none" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M10 18l6 -6l-6 -6v12" />
+                </svg>
+            </a>
+            <a href="#"
+                class="flex justify-between mt-1 mx-4 px-2 py-2 transition-transform rounded-sm hover:bg-red-500 border-l-4 border-primary hover:border-white">
+                <div class="flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-share"
+                        width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M4 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                        <path d="M12.5 17h-6.5v-14h-2" />
+                        <path d="M6 5l14 1l-1 7h-13" />
+                        <path d="M16 22l5 -5" />
+                        <path d="M21 21.5v-4.5h-4.5" />
+                    </svg>
+                    <span class="text-white ml-2">Purchases</span>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-caret-right stroke-white"
+                    width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="none" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M10 18l6 -6l-6 -6v12" />
+                </svg>
+            </a>
+            <a href="#"
+                class="flex justify-between mt-1 mx-4 px-2 py-2 transition-transform rounded-sm hover:bg-red-500 border-l-4 border-primary hover:border-white">
+                <div class="flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-share"
+                        width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M4 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                        <path d="M12.5 17h-6.5v-14h-2" />
+                        <path d="M6 5l14 1l-1 7h-13" />
+                        <path d="M16 22l5 -5" />
+                        <path d="M21 21.5v-4.5h-4.5" />
+                    </svg>
+                    <span class="text-white ml-2">Accounts</span>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-caret-right stroke-white"
+                    width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="none" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M10 18l6 -6l-6 -6v12" />
+                </svg>
+            </a>
+            <a href="#"
+                class="flex justify-between mt-1 mx-4 px-2 py-2 transition-transform rounded-sm hover:bg-red-500 border-l-4 border-primary hover:border-white">
+                <div class="flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-share"
+                        width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M4 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                        <path d="M12.5 17h-6.5v-14h-2" />
+                        <path d="M6 5l14 1l-1 7h-13" />
+                        <path d="M16 22l5 -5" />
+                        <path d="M21 21.5v-4.5h-4.5" />
+                    </svg>
+                    <span class="text-white ml-2">Expenses</span>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-caret-right stroke-white"
+                    width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="none" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M10 18l6 -6l-6 -6v12" />
+                </svg>
+            </a>
+            <a href="#"
+                class="flex justify-between mt-1 mx-4 px-2 py-2 transition-transform rounded-sm hover:bg-red-500 border-l-4 border-primary hover:border-white">
+                <div class="flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-share"
+                        width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M4 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                        <path d="M12.5 17h-6.5v-14h-2" />
+                        <path d="M6 5l14 1l-1 7h-13" />
+                        <path d="M16 22l5 -5" />
+                        <path d="M21 21.5v-4.5h-4.5" />
+                    </svg>
+                    <span class="text-white ml-2">Reports</span>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-caret-right stroke-white"
+                    width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="none" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M10 18l6 -6l-6 -6v12" />
+                </svg>
+            </a>
+            <a href="#"
+                class="flex justify-between mt-1 mx-4 px-2 py-2 transition-transform rounded-sm hover:bg-red-500 border-l-4 border-primary hover:border-white">
+                <div class="flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-share"
+                        width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M4 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                        <path d="M12.5 17h-6.5v-14h-2" />
+                        <path d="M6 5l14 1l-1 7h-13" />
+                        <path d="M16 22l5 -5" />
+                        <path d="M21 21.5v-4.5h-4.5" />
+                    </svg>
+                    <span class="text-white ml-2">Utilites</span>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-caret-right stroke-white"
+                    width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="none" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M10 18l6 -6l-6 -6v12" />
+                </svg>
+            </a>
+            <a href="#"
+                class="flex justify-between mt-1 mx-4 px-2 py-2 transition-transform rounded-sm hover:bg-red-500 border-l-4 border-primary hover:border-white">
+                <div class="flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-share"
+                        width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M4 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                        <path d="M12.5 17h-6.5v-14h-2" />
+                        <path d="M6 5l14 1l-1 7h-13" />
+                        <path d="M16 22l5 -5" />
+                        <path d="M21 21.5v-4.5h-4.5" />
+                    </svg>
+                    <span class="text-white ml-2">Settings</span>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-caret-right stroke-white"
+                    width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="none" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M10 18l6 -6l-6 -6v12" />
+                </svg>
+            </a>
+        </div>
+    </aside>
+    <div class="absolute hidden sidebar-backdrop top-0 left-0 right-0 bottom-0 bg-black opacity-70 z-10 transition-all">
+    </div>
+    <main class="ml-0 lg:ml-64 p-3 md:p-5 transition-all duration-1000">
+        <div class="w-full grid grid-cols-12">
+            <div class="col-span-12 md:col-span-4 bg-white h-[89vh] relative">
+                <div class="bg-red-500 flex justify-between p-3 text-white border">
+                    <div class="left flex flex-col">
+                        <span class="font-bold">INV1611230001</span>
+                        <span>23 September 2023 21:06</span>
+                    </div>
+                    <div class="right flex items-center">
+                        <span class="font-bold">Lilis Cahyani</span>
+                    </div>
+                </div>
+                <div class="bg-red-500 p-3 grid grid-cols-12 border">
+                    <label for="customer_id" class="font-bold text-white col-span-3 p-1">Customer</label>
+                    <select name="customer_id" id="customer_id" class="col-span-8 mr-3 p-1">
+                        <option value="">Walk In Customer</option>
+                        <option value="">PT. AdiNusantara Teknologi</option>
+                        <option value="">Toko Enin</option>
+                    </select>
+                    <div class="col-span-1">
+                        <button class="bg-primary hover:bg-slate-700 w-full text-white p-1 font-bold">+</button>
+                    </div>
+                </div>
+                <table class="w-full">
+                    <tr>
+                        <div class="border-b flex justify-between p-2 items-center overflow-y-auto">
+                            <div class="flex flex-col">
+                                <span class="font-semibold">Woment Cloth</span>
+                                <span>Stock : 30</span>
+                            </div>
+                            <span class="font-semibold">155.000</span>
+                            <div class="flex items-center justify-center space-x-2">
+                                <button id="decrement" class="px-3 py-1 bg-gray-200 rounded">-</button>
+                                <input id="numberInput" class="border border-gray-300 px-3 py-1 w-16 text-center"
+                                    type="number" value="1" minlength="1">
+                                <button id="increment" class="px-3 py-1 bg-gray-200 rounded">+</button>
+                            </div>
+                            <span class="font-semibold">155.000</span>
+                            <div class="flex flex-col">
+                                <button class="bg-lime-500 p-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit"
+                                        width="23" height="23" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
+                                        <path
+                                            d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
+                                        <path d="M16 5l3 3" />
+                                    </svg>
+                                </button>
+                                <button class="bg-red-500 p-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash"
+                                        width="23" height="23" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M4 7l16 0" />
+                                        <path d="M10 11l0 6" />
+                                        <path d="M14 11l0 6" />
+                                        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </tr>
+                    <tr>
+                        <div class="border-b flex justify-between p-2 items-center overflow-y-auto">
+                            <div class="flex flex-col">
+                                <span class="font-semibold">Woment Cloth</span>
+                                <span>Stock : 30</span>
+                            </div>
+                            <span class="font-semibold">155.000</span>
+                            <div class="flex items-center justify-center space-x-2">
+                                <button id="decrement" class="px-3 py-1 bg-gray-200 rounded">-</button>
+                                <input id="numberInput" class="border border-gray-300 px-3 py-1 w-16 text-center"
+                                    type="number" value="1" minlength="1">
+                                <button id="increment" class="px-3 py-1 bg-gray-200 rounded">+</button>
+                            </div>
+                            <span class="font-semibold">155.000</span>
+                            <div class="flex flex-col">
+                                <button class="bg-lime-500 p-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit"
+                                        width="23" height="23" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
+                                        <path
+                                            d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
+                                        <path d="M16 5l3 3" />
+                                    </svg>
+                                </button>
+                                <button class="bg-red-500 p-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash"
+                                        width="23" height="23" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M4 7l16 0" />
+                                        <path d="M10 11l0 6" />
+                                        <path d="M14 11l0 6" />
+                                        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </tr>
+                    <tr>
+                        <div class="border-b flex justify-between p-2 items-center overflow-y-auto">
+                            <div class="flex flex-col">
+                                <span class="font-semibold">Woment Cloth</span>
+                                <span>Stock : 30</span>
+                            </div>
+                            <span class="font-semibold">155.000</span>
+                            <div class="flex items-center justify-center space-x-2">
+                                <button id="decrement" class="px-3 py-1 bg-gray-200 rounded">-</button>
+                                <input id="numberInput" class="border border-gray-300 px-3 py-1 w-16 text-center"
+                                    type="number" value="1" minlength="1">
+                                <button id="increment" class="px-3 py-1 bg-gray-200 rounded">+</button>
+                            </div>
+                            <span class="font-semibold">155.000</span>
+                            <div class="flex flex-col">
+                                <button class="bg-lime-500 p-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit"
+                                        width="23" height="23" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
+                                        <path
+                                            d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
+                                        <path d="M16 5l3 3" />
+                                    </svg>
+                                </button>
+                                <button class="bg-red-500 p-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash"
+                                        width="23" height="23" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M4 7l16 0" />
+                                        <path d="M10 11l0 6" />
+                                        <path d="M14 11l0 6" />
+                                        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </tr>
+                </table>
+                <div class="absolute bottom-0 w-full text-white">
+                    <div class="bg-red-500 flex justify-between p-3 font-bold border">
+                        <span>Item : 23</span>
+                        <span>Qty : 47</span>
+                        <span>PPN 11% : Rp15.000</span>
+                    </div>
+                    <div class="bg-red-500 flex justify-between p-3 font-bold text-3xl border">
+                        <span>Total</span>
+                        <span>Rp150.000</span>
+                    </div>
+                    <div class="flex">
+                        <button class="bg-primary hover:bg-slate-500 p-3 w-full border">
+                            Second Monitor (F8)
+                        </button>
+                        <button class="bg-primary hover:bg-slate-500 p-3 w-full border">
+                            Void (F8)
+                        </button>
+                    </div>
+                    <div class="flex">
+                        <button class="bg-primary hover:bg-slate-500 p-3 w-full border">
+                            Hold (F5)
+                        </button>
+                        <button class="bg-primary hover:bg-slate-500 p-3 w-full border">
+                            Bayar (F8)
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-12 md:col-span-8 md:pl-5">
+                <div class="bg-white p-3 mt-3 md:mt-0">
+                    <div class="relative">
+                        <input type="text" class="w-full p-3 bg-gray-100 border pl-16"
+                            placeholder="Search product or scan barcode here (F1)">
+                        <button class="bg-primary p-3 absolute top-0 left-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search"
+                                width="25" height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                                <path d="M21 21l-6 -6" />
+                            </svg>
+                        </button>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-barcode absolute top-1 right-3" width="40" height="40"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M4 7v-1a2 2 0 0 1 2 -2h2" />
+                            <path d="M4 17v1a2 2 0 0 0 2 2h2" />
+                            <path d="M16 4h2a2 2 0 0 1 2 2v1" />
+                            <path d="M16 20h2a2 2 0 0 0 2 -2v-1" />
+                            <path d="M5 11h1v2h-1z" />
+                            <path d="M10 11l0 2" />
+                            <path d="M14 11h1v2h-1z" />
+                            <path d="M19 11l0 2" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="flex mt-3 overflow-hidden hover:overflow-auto categories">
+                    <button class="bg-red-500 hover:bg-red-400 text-white px-5 py-2 mr-3  whitespace-nowrap">
+                        ALL
+                    </button>
+                    <button class="bg-white hover:bg-gray-200 px-5 py-2 mr-3  whitespace-nowrap">
+                        Mens Collection
+                    </button>
+                    <button class="bg-white hover:bg-gray-200 px-5 py-2 mr-3  whitespace-nowrap">
+                        Electronic
+                    </button>
+                    <button class="bg-white hover:bg-gray-200 px-5 py-2 mr-3  whitespace-nowrap">
+                        Handphone
+                    </button>
+                    <button class="bg-white hover:bg-gray-200 px-5 py-2 mr-3  whitespace-nowrap">
+                        Laptop
+                    </button>
+                    <button class="bg-white hover:bg-gray-200 px-5 py-2 mr-3  whitespace-nowrap">
+                        Women Cloth
+                    </button>
+                    <button class="bg-white hover:bg-gray-200 px-5 py-2 mr-3  whitespace-nowrap">
+                        Accecsories
+                    </button>
+                    <button class="bg-white hover:bg-gray-200 px-5 py-2 mr-3  whitespace-nowrap">
+                        Women Cloth
+                    </button>
+                    <button class="bg-white hover:bg-gray-200 px-5 py-2 mr-3  whitespace-nowrap">
+                        Accecsories
+                    </button>
+                    <button class="bg-white hover:bg-gray-200 px-5 py-2 mr-3  whitespace-nowrap">
+                        Women Cloth
+                    </button>
+                    <button class="bg-white hover:bg-gray-200 px-5 py-2 mr-3  whitespace-nowrap">
+                        Accecsories
+                    </button>
+                </div>
+                <div class="bg-white mt-3 grid grid-cols-12 gap-3 p-3">
+                    <div class="col-span-6 md:col-span-4 lg:col-span-3 bg-gray-100 p-3 shadow">
+                        <img src="https://placekitten.com/300/300" alt="" class="w-full object-cover h-36">
+                        <div class="flex justify-between mt-1 items-center">
+                            <div class="left">
+                                <span class="">Womens Collection</span>
+                                <span class="text-orange-500">Rp155.000</span>
+                            </div>
+                            <button
+                                class="bg-primary hover:bg-slate-700 py-1 px-3 rounded-lg text-white text-lg font-bold">+</button>
+                        </div>
+                    </div>
+                    <div class="col-span-6 md:col-span-4 lg:col-span-3 bg-gray-100 p-3 shadow">
+                        <img src="https://placekitten.com/700/400" alt="" class="w-full object-cover h-36">
+                        <div class="flex justify-between mt-1 items-center">
+                            <div class="left">
+                                <span class="">Womens Collection</span>
+                                <span class="text-orange-500">Rp155.000</span>
+                            </div>
+                            <button
+                                class="bg-primary hover:bg-slate-700 py-1 px-3 rounded-lg text-white text-lg font-bold">+</button>
+                        </div>
+                    </div>
+                    <div class="col-span-6 md:col-span-4 lg:col-span-3 bg-gray-100 p-3 shadow">
+                        <img src="https://placekitten.com/400/300" alt="" class="w-full object-cover h-36">
+                        <div class="flex justify-between mt-1 items-center">
+                            <div class="left">
+                                <span class="">Womens Collection</span>
+                                <span class="text-orange-500">Rp155.000</span>
+                            </div>
+                            <button
+                                class="bg-primary hover:bg-slate-700 py-1 px-3 rounded-lg text-white text-lg font-bold">+</button>
+                        </div>
+                    </div>
+                    <div class="col-span-6 md:col-span-4 lg:col-span-3 bg-gray-100 p-3 shadow">
+                        <img src="https://placekitten.com/200/300" alt="" class="w-full object-cover h-36">
+                        <div class="flex justify-between mt-1 items-center">
+                            <div class="left">
+                                <span class="">Womens Collection</span>
+                                <span class="text-orange-500">Rp155.000</span>
+                            </div>
+                            <button
+                                class="bg-primary hover:bg-slate-700 py-1 px-3 rounded-lg text-white text-lg font-bold">+</button>
+                        </div>
+                    </div>
+                    <div class="col-span-6 md:col-span-4 lg:col-span-3 bg-gray-100 p-3 shadow">
+                        <img src="https://placekitten.com/500/300" alt="" class="w-full object-cover h-36">
+                        <div class="flex justify-between mt-1 items-center">
+                            <div class="left">
+                                <span class="">Womens Collection</span>
+                                <span class="text-orange-500">Rp155.000</span>
+                            </div>
+                            <button
+                                class="bg-primary hover:bg-slate-700 py-1 px-3 rounded-lg text-white text-lg font-bold">+</button>
+                        </div>
+                    </div>
+                    <div class="col-span-6 md:col-span-4 lg:col-span-3 bg-gray-100 p-3 shadow">
+                        <img src="https://placekitten.com/800/700" alt="" class="w-full object-cover h-36">
+                        <div class="flex justify-between mt-1 items-center">
+                            <div class="left">
+                                <span class="">Womens Collection</span>
+                                <span class="text-orange-500">Rp155.000</span>
+                            </div>
+                            <button
+                                class="bg-primary hover:bg-slate-700 py-1 px-3 rounded-lg text-white text-lg font-bold">+</button>
+                        </div>
+                    </div>
+                    <div class="col-span-6 md:col-span-4 lg:col-span-3 bg-gray-100 p-3 shadow">
+                        <img src="https://placekitten.com/700/700" alt="" class="w-full object-cover h-36">
+                        <div class="flex justify-between mt-1 items-center">
+                            <div class="left">
+                                <span class="">Womens Collection</span>
+                                <span class="text-orange-500">Rp155.000</span>
+                            </div>
+                            <button
+                                class="bg-primary hover:bg-slate-700 py-1 px-3 rounded-lg text-white text-lg font-bold">+</button>
+                        </div>
+                    </div>
+                    <div class="col-span-6 md:col-span-4 lg:col-span-3 bg-gray-100 p-3 shadow">
+                        <img src="https://placekitten.com/800/800" alt="" class="w-full object-cover h-36">
+                        <div class="flex justify-between mt-1 items-center">
+                            <div class="left">
+                                <span class="">Womens Collection</span>
+                                <span class="text-orange-500">Rp155.000</span>
+                            </div>
+                            <button
+                                class="bg-primary hover:bg-slate-700 py-1 px-3 rounded-lg text-white text-lg font-bold">+</button>
+                        </div>
+                    </div>
+                    <div class="col-span-6 md:col-span-4 lg:col-span-3 bg-gray-100 p-3 shadow">
+                        <img src="https://placekitten.com/900/900" alt="" class="w-full object-cover h-36">
+                        <div class="flex justify-between mt-1 items-center">
+                            <div class="left">
+                                <span class="">Womens Collection</span>
+                                <span class="text-orange-500">Rp155.000</span>
+                            </div>
+                            <button
+                                class="bg-primary hover:bg-slate-700 py-1 px-3 rounded-lg text-white text-lg font-bold">+</button>
+                        </div>
+                    </div>
+                    <div class="col-span-6 md:col-span-4 lg:col-span-3 bg-gray-100 p-3 shadow">
+                        <img src="https://placekitten.com/400/700" alt="" class="w-full object-cover h-36">
+                        <div class="flex justify-between mt-1 items-center">
+                            <div class="left">
+                                <span class="">Womens Collection</span>
+                                <span class="text-orange-500">Rp155.000</span>
+                            </div>
+                            <button
+                                class="bg-primary hover:bg-slate-700 py-1 px-3 rounded-lg text-white text-lg font-bold">+</button>
+                        </div>
+                    </div>
+                    <div class="col-span-6 md:col-span-4 lg:col-span-3 bg-gray-100 p-3 shadow">
+                        <img src="https://placekitten.com/950/950" alt="" class="w-full object-cover h-36">
+                        <div class="flex justify-between mt-1 items-center">
+                            <div class="left">
+                                <span class="">Womens Collection</span>
+                                <span class="text-orange-500">Rp155.000</span>
+                            </div>
+                            <button
+                                class="bg-primary hover:bg-slate-700 py-1 px-3 rounded-lg text-white text-lg font-bold">+</button>
+                        </div>
+                    </div>
+                    <div class="col-span-6 md:col-span-4 lg:col-span-3 bg-gray-100 p-3 shadow">
+                        <img src="https://placekitten.com/1000/900" alt="" class="w-full object-cover h-36">
+                        <div class="flex justify-between mt-1 items-center">
+                            <div class="left">
+                                <span class="">Womens Collection</span>
+                                <span class="text-orange-500">Rp155.000</span>
+                            </div>
+                            <button
+                                class="bg-primary hover:bg-slate-700 py-1 px-3 rounded-lg text-white text-lg font-bold">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="h-10"></div>
+    <span class="absolute bottom-5 right-5">
+        <p class="text-gray-400">copyright 2023 &copy; by adiatna sukmana</p>
+    </span>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggler = document.querySelector(".toggler");
+            const aside = document.querySelector("aside");
+            const main = document.querySelector("main");
+            const nav = document.querySelector("nav");
+            const closeSidebar = document.querySelector(".close-sidebar");
+            const sidebarBackdrop = document.querySelector(".sidebar-backdrop");
+            const navBackdrop = document.querySelector(".nav-backdrop");
+
+            toggler.addEventListener("click", () => {
+                aside.classList.toggle("lg:ml-0");
+                main.classList.toggle("lg:ml-64");
+                nav.classList.toggle("lg:ml-64");
+                aside.classList.toggle("left-64");
+
+                sidebarBackdrop.classList.remove("hidden");
+                sidebarBackdrop.classList.remove("opacity-0");
+                sidebarBackdrop.classList.add("opacity-70");
+
+                sidebarBackdrop.classList.add("lg:hidden");
+            });
+
+            sidebarBackdrop.addEventListener("click", () => {
+                aside.classList.remove("left-64");
+                sidebarBackdrop.classList.remove("opacity-70");
+                sidebarBackdrop.classList.add("opacity-0");
+                sidebarBackdrop.classList.add("hidden");
+            });
+
+            closeSidebar.addEventListener("click", () => {
+                aside.classList.remove("left-64");
+                sidebarBackdrop.classList.remove("opacity-70");
+                sidebarBackdrop.classList.add("opacity-0");
+                sidebarBackdrop.classList.add("hidden");
+            });
+
+            const menuBtn = document.querySelectorAll(".menu-btn");
+
+            menuBtn.forEach((btn) => {
+                btn.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    const arrowIcon = btn.querySelector("svg.transition-transform");
+                    arrowIcon.classList.toggle("rotate-90");
+
+                    const target = btn.getAttribute("data-target");
+                    const targetEl = document.querySelector(target);
+                    targetEl.style.maxHeight = targetEl.style.maxHeight === "200px" ? "0px" : "200px";
+                });
+            });
+
+            const msgBtn = document.querySelector(".msg-btn");
+            const notifBtn = document.querySelector(".notif-btn");
+            const profileBtn = document.querySelector(".profile-btn");
+
+            msgBtn.addEventListener("click", (e) => {
+                const msgEl = document.querySelector(".msg-el");
+                const notifEl = document.querySelector(".notif-el");
+                const profileEl = document.querySelector(".profile-el");
+
+                msgEl.classList.toggle("hidden");
+                msgEl.classList.toggle("flex");
+                notifEl.classList.add("hidden");
+                notifEl.classList.remove("flex");
+                profileEl.classList.add("hidden");
+                profileEl.classList.remove("flex");
+
+                navBackdrop.classList.remove('hidden');
+            });
+
+            notifBtn.addEventListener("click", (e) => {
+                const notifEl = document.querySelector(".notif-el");
+                const msgEl = document.querySelector(".msg-el");
+                const profileEl = document.querySelector(".profile-el");
+
+                notifEl.classList.toggle("hidden");
+                notifEl.classList.toggle("flex");
+                msgEl.classList.add("hidden");
+                msgEl.classList.remove("flex");
+                profileEl.classList.add("hidden");
+                profileEl.classList.remove("flex");
+                navBackdrop.classList.remove('hidden');
+            });
+
+            profileBtn.addEventListener("click", (e) => {
+                const notifEl = document.querySelector(".notif-el");
+                const msgEl = document.querySelector(".msg-el");
+                const profileEl = document.querySelector(".profile-el");
+
+                profileEl.classList.toggle("hidden");
+                profileEl.classList.toggle("flex");
+                msgEl.classList.add("hidden");
+                msgEl.classList.remove("flex");
+                notifEl.classList.add("hidden");
+                notifEl.classList.remove("flex");
+                navBackdrop.classList.remove('hidden');
+            });
+
+            navBackdrop.addEventListener('click', function () {
+                this.classList.add('hidden');
+
+                const notifEl = document.querySelector(".notif-el");
+                notifEl.classList.add("hidden");
+                notifEl.classList.remove("flex");
+
+                const profileEl = document.querySelector(".profile-el");
+                profileEl.classList.add("hidden");
+                profileEl.classList.remove("flex");
+
+                const msgEl = document.querySelector(".msg-el");
+                msgEl.classList.add("hidden");
+                msgEl.classList.remove("flex");
+            });
+
+            const decrementEl = document.querySelector("#decrement");
+            const incrementEl = document.querySelector("#increment");
+
+            decrementEl.addEventListener("click", (e) => {
+                const qty = parseInt(e.target.closest('div').querySelector('input[type="number"]').value)
+                if (qty > 1)
+                    e.target.closest('div').querySelector('input[type="number"]').value = qty - 1;
+            });
+
+            incrementEl.addEventListener("click", (e) => {
+                const qty = parseInt(e.target.closest('div').querySelector('input[type="number"]').value)
+                e.target.closest('div').querySelector('input[type="number"]').value = qty + 1;
+            });
+        });
+    </script>
+</body>
+
+</html>
