@@ -423,7 +423,38 @@
     </div>
     <main class="ml-0 lg:ml-64 p-3 md:p-5 transition-all duration-1000">
         <div class="w-full grid grid-cols-12">
-            <div class="col-span-12 md:col-span-4 bg-white h-[89vh] relative">
+            <div class="col-span-12">
+                <div class="bg-white p-3 mt-3 md:mt-0">
+                    <div class="relative">
+                        <input type="text" autofocus class="w-full outline-none p-3 bg-gray-100 border pl-16"
+                            placeholder="Search product or scan barcode here (F1)">
+                        <button class="bg-primary p-3 absolute top-0 left-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search"
+                                width="25" height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                                <path d="M21 21l-6 -6" />
+                            </svg>
+                        </button>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-barcode absolute top-1 right-3" width="40" height="40"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M4 7v-1a2 2 0 0 1 2 -2h2" />
+                            <path d="M4 17v1a2 2 0 0 0 2 2h2" />
+                            <path d="M16 4h2a2 2 0 0 1 2 2v1" />
+                            <path d="M16 20h2a2 2 0 0 0 2 -2v-1" />
+                            <path d="M5 11h1v2h-1z" />
+                            <path d="M10 11l0 2" />
+                            <path d="M14 11h1v2h-1z" />
+                            <path d="M19 11l0 2" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-12 bg-white h-[83vh] relative">
                 <div class="bg-red-500 flex justify-between p-3 text-white border">
                     <div class="left flex flex-col">
                         <span class="font-bold">INV1611230001</span>
@@ -448,11 +479,32 @@
                     <table class="w-full">
                         <tr>
                             <td>
-                                <div class="border-b flex justify-between p-2 items-center overflow-y-auto">
+                                <div
+                                    class="border-b flex justify-between text-center p-1 items-center overflow-y-auto bg-primary text-white px-5">
+                                    <span class="font-bold">No</span>
+                                    <span class="font-bold">Barang</span>
+                                    <span class="font-bold">Satuan</span>
+                                    <span class="font-bold">Harga</span>
+                                    <span class="font-bold">Jumlah</span>
+                                    <span class="font-bold">Diskon (%) | Potongan</span>
+                                    <span class="font-bold">Subtotal</span>
+                                    <span class="font-bold">Aksi</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div
+                                    class="border-b flex text-left justify-between p-1 items-center overflow-y-auto px-5">
+                                    <span class="font-bold">1</span>
                                     <div class="flex flex-col">
                                         <span class="font-semibold">Woment Cloth</span>
                                         <span>Stock : 30</span>
                                     </div>
+                                    <select name="" id="" class="px-5 py-2 border-b">
+                                        <option value="">PCS</option>
+                                        <option value="">BKS</option>
+                                    </select>
                                     <span class="font-semibold">155.000</span>
                                     <div class="flex items-center justify-center space-x-2">
                                         <button class="px-3 py-1 bg-gray-200 rounded decrement">-</button>
@@ -461,8 +513,16 @@
                                             type="text" value="1" minlength="1">
                                         <button class="px-3 py-1 bg-gray-200 rounded increment">+</button>
                                     </div>
+                                    <div class="flex">
+                                        <input id="discount" name="discount"
+                                            class="border-b outline-none select-all border-gray-300 px-3 py-1 w-20 text-center mr-4"
+                                            type="text" value="0" minlength="1">
+                                        <input id="rebate" name="rebate"
+                                            class="border-b outline-none select-all border-gray-300 px-3 py-1 w-20 text-center"
+                                            type="text" value="0" minlength="1">
+                                    </div>
                                     <span class="font-semibold">155.000</span>
-                                    <div class="flex flex-col">
+                                    <div class="flex flex-row">
                                         <button class="bg-lime-500 hover:bg-lime-600 p-1">
                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                 class="icon icon-tabler icon-tabler-edit" width="23" height="23"
@@ -494,11 +554,17 @@
                         </tr>
                         <tr>
                             <td>
-                                <div class="border-b flex justify-between p-2 items-center overflow-y-auto">
+                                <div
+                                    class="border-b flex text-left justify-between p-1 items-center overflow-y-auto px-5">
+                                    <span class="font-bold">2</span>
                                     <div class="flex flex-col">
                                         <span class="font-semibold">Woment Cloth</span>
                                         <span>Stock : 30</span>
                                     </div>
+                                    <select name="" id="" class="px-5 py-2 border-b">
+                                        <option value="">PCS</option>
+                                        <option value="">BKS</option>
+                                    </select>
                                     <span class="font-semibold">155.000</span>
                                     <div class="flex items-center justify-center space-x-2">
                                         <button class="px-3 py-1 bg-gray-200 rounded decrement">-</button>
@@ -507,8 +573,16 @@
                                             type="text" value="1" minlength="1">
                                         <button class="px-3 py-1 bg-gray-200 rounded increment">+</button>
                                     </div>
+                                    <div class="flex">
+                                        <input id="discount" name="discount"
+                                            class="border-b outline-none select-all border-gray-300 px-3 py-1 w-20 text-center mr-4"
+                                            type="text" value="0" minlength="1">
+                                        <input id="rebate" name="rebate"
+                                            class="border-b outline-none select-all border-gray-300 px-3 py-1 w-20 text-center"
+                                            type="text" value="0" minlength="1">
+                                    </div>
                                     <span class="font-semibold">155.000</span>
-                                    <div class="flex flex-col">
+                                    <div class="flex flex-row">
                                         <button class="bg-lime-500 hover:bg-lime-600 p-1">
                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                 class="icon icon-tabler icon-tabler-edit" width="23" height="23"
@@ -540,11 +614,17 @@
                         </tr>
                         <tr>
                             <td>
-                                <div class="border-b flex justify-between p-2 items-center overflow-y-auto">
+                                <div
+                                    class="border-b flex text-left justify-between p-1 items-center overflow-y-auto px-5">
+                                    <span class="font-bold">3</span>
                                     <div class="flex flex-col">
                                         <span class="font-semibold">Woment Cloth</span>
                                         <span>Stock : 30</span>
                                     </div>
+                                    <select name="" id="" class="px-5 py-2 border-b">
+                                        <option value="">PCS</option>
+                                        <option value="">BKS</option>
+                                    </select>
                                     <span class="font-semibold">155.000</span>
                                     <div class="flex items-center justify-center space-x-2">
                                         <button class="px-3 py-1 bg-gray-200 rounded decrement">-</button>
@@ -553,8 +633,16 @@
                                             type="text" value="1" minlength="1">
                                         <button class="px-3 py-1 bg-gray-200 rounded increment">+</button>
                                     </div>
+                                    <div class="flex">
+                                        <input id="discount" name="discount"
+                                            class="border-b outline-none select-all border-gray-300 px-3 py-1 w-20 text-center mr-4"
+                                            type="text" value="0" minlength="1">
+                                        <input id="rebate" name="rebate"
+                                            class="border-b outline-none select-all border-gray-300 px-3 py-1 w-20 text-center"
+                                            type="text" value="0" minlength="1">
+                                    </div>
                                     <span class="font-semibold">155.000</span>
-                                    <div class="flex flex-col">
+                                    <div class="flex flex-row">
                                         <button class="bg-lime-500 hover:bg-lime-600 p-1">
                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                 class="icon icon-tabler icon-tabler-edit" width="23" height="23"
@@ -611,206 +699,6 @@
                         <button class="bg-primary hover:bg-slate-500 p-3 w-full border">
                             Bayar (F8)
                         </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-span-12 md:col-span-8 md:pl-5">
-                <div class="bg-white p-3 mt-3 md:mt-0">
-                    <div class="relative">
-                        <input type="text" autofocus class="w-full p-3 outline-none bg-gray-100 border pl-16"
-                            placeholder="Search product or scan barcode here (F1)">
-                        <button class="bg-primary p-3 absolute top-0 left-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search"
-                                width="25" height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
-                                <path d="M21 21l-6 -6" />
-                            </svg>
-                        </button>
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                            class="icon icon-tabler icon-tabler-barcode absolute top-1 right-3" width="40" height="40"
-                            viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M4 7v-1a2 2 0 0 1 2 -2h2" />
-                            <path d="M4 17v1a2 2 0 0 0 2 2h2" />
-                            <path d="M16 4h2a2 2 0 0 1 2 2v1" />
-                            <path d="M16 20h2a2 2 0 0 0 2 -2v-1" />
-                            <path d="M5 11h1v2h-1z" />
-                            <path d="M10 11l0 2" />
-                            <path d="M14 11h1v2h-1z" />
-                            <path d="M19 11l0 2" />
-                        </svg>
-                    </div>
-                </div>
-                <div class="flex mt-3 overflow-x-scroll categories">
-                    <button class="bg-red-500 hover:bg-red-600 text-white px-5 py-2 mr-3  whitespace-nowrap">
-                        ALL
-                    </button>
-                    <button class="bg-white hover:bg-gray-200 px-5 py-2 mr-3  whitespace-nowrap">
-                        Mens Collection
-                    </button>
-                    <button class="bg-white hover:bg-gray-200 px-5 py-2 mr-3  whitespace-nowrap">
-                        Electronic
-                    </button>
-                    <button class="bg-white hover:bg-gray-200 px-5 py-2 mr-3  whitespace-nowrap">
-                        Handphone
-                    </button>
-                    <button class="bg-white hover:bg-gray-200 px-5 py-2 mr-3  whitespace-nowrap">
-                        Laptop
-                    </button>
-                    <button class="bg-white hover:bg-gray-200 px-5 py-2 mr-3  whitespace-nowrap">
-                        Women Cloth
-                    </button>
-                    <button class="bg-white hover:bg-gray-200 px-5 py-2 mr-3  whitespace-nowrap">
-                        Accecsories
-                    </button>
-                    <button class="bg-white hover:bg-gray-200 px-5 py-2 mr-3  whitespace-nowrap">
-                        Women Cloth
-                    </button>
-                    <button class="bg-white hover:bg-gray-200 px-5 py-2 mr-3  whitespace-nowrap">
-                        Accecsories
-                    </button>
-                    <button class="bg-white hover:bg-gray-200 px-5 py-2 mr-3  whitespace-nowrap">
-                        Women Cloth
-                    </button>
-                    <button class="bg-white hover:bg-gray-200 px-5 py-2 mr-3  whitespace-nowrap">
-                        Accecsories
-                    </button>
-                </div>
-                <div class="bg-white mt-3 grid grid-cols-12 gap-3 p-3">
-                    <div class="col-span-6 md:col-span-4 lg:col-span-3 bg-gray-100 p-3 shadow">
-                        <img src="https://placekitten.com/300/300" alt="" class="w-full object-cover h-36">
-                        <div class="flex justify-between mt-1 items-center">
-                            <div class="left">
-                                <span class="">Womens Collection</span>
-                                <span class="text-orange-500">Rp155.000</span>
-                            </div>
-                            <button
-                                class="bg-primary hover:bg-slate-700 py-1 px-3 rounded-lg text-white text-lg font-bold">+</button>
-                        </div>
-                    </div>
-                    <div class="col-span-6 md:col-span-4 lg:col-span-3 bg-gray-100 p-3 shadow">
-                        <img src="https://placekitten.com/700/400" alt="" class="w-full object-cover h-36">
-                        <div class="flex justify-between mt-1 items-center">
-                            <div class="left">
-                                <span class="">Womens Collection</span>
-                                <span class="text-orange-500">Rp155.000</span>
-                            </div>
-                            <button
-                                class="bg-primary hover:bg-slate-700 py-1 px-3 rounded-lg text-white text-lg font-bold">+</button>
-                        </div>
-                    </div>
-                    <div class="col-span-6 md:col-span-4 lg:col-span-3 bg-gray-100 p-3 shadow">
-                        <img src="https://placekitten.com/400/300" alt="" class="w-full object-cover h-36">
-                        <div class="flex justify-between mt-1 items-center">
-                            <div class="left">
-                                <span class="">Womens Collection</span>
-                                <span class="text-orange-500">Rp155.000</span>
-                            </div>
-                            <button
-                                class="bg-primary hover:bg-slate-700 py-1 px-3 rounded-lg text-white text-lg font-bold">+</button>
-                        </div>
-                    </div>
-                    <div class="col-span-6 md:col-span-4 lg:col-span-3 bg-gray-100 p-3 shadow">
-                        <img src="https://placekitten.com/200/300" alt="" class="w-full object-cover h-36">
-                        <div class="flex justify-between mt-1 items-center">
-                            <div class="left">
-                                <span class="">Womens Collection</span>
-                                <span class="text-orange-500">Rp155.000</span>
-                            </div>
-                            <button
-                                class="bg-primary hover:bg-slate-700 py-1 px-3 rounded-lg text-white text-lg font-bold">+</button>
-                        </div>
-                    </div>
-                    <div class="col-span-6 md:col-span-4 lg:col-span-3 bg-gray-100 p-3 shadow">
-                        <img src="https://placekitten.com/500/300" alt="" class="w-full object-cover h-36">
-                        <div class="flex justify-between mt-1 items-center">
-                            <div class="left">
-                                <span class="">Womens Collection</span>
-                                <span class="text-orange-500">Rp155.000</span>
-                            </div>
-                            <button
-                                class="bg-primary hover:bg-slate-700 py-1 px-3 rounded-lg text-white text-lg font-bold">+</button>
-                        </div>
-                    </div>
-                    <div class="col-span-6 md:col-span-4 lg:col-span-3 bg-gray-100 p-3 shadow">
-                        <img src="https://placekitten.com/800/700" alt="" class="w-full object-cover h-36">
-                        <div class="flex justify-between mt-1 items-center">
-                            <div class="left">
-                                <span class="">Womens Collection</span>
-                                <span class="text-orange-500">Rp155.000</span>
-                            </div>
-                            <button
-                                class="bg-primary hover:bg-slate-700 py-1 px-3 rounded-lg text-white text-lg font-bold">+</button>
-                        </div>
-                    </div>
-                    <div class="col-span-6 md:col-span-4 lg:col-span-3 bg-gray-100 p-3 shadow">
-                        <img src="https://placekitten.com/700/700" alt="" class="w-full object-cover h-36">
-                        <div class="flex justify-between mt-1 items-center">
-                            <div class="left">
-                                <span class="">Womens Collection</span>
-                                <span class="text-orange-500">Rp155.000</span>
-                            </div>
-                            <button
-                                class="bg-primary hover:bg-slate-700 py-1 px-3 rounded-lg text-white text-lg font-bold">+</button>
-                        </div>
-                    </div>
-                    <div class="col-span-6 md:col-span-4 lg:col-span-3 bg-gray-100 p-3 shadow">
-                        <img src="https://placekitten.com/800/800" alt="" class="w-full object-cover h-36">
-                        <div class="flex justify-between mt-1 items-center">
-                            <div class="left">
-                                <span class="">Womens Collection</span>
-                                <span class="text-orange-500">Rp155.000</span>
-                            </div>
-                            <button
-                                class="bg-primary hover:bg-slate-700 py-1 px-3 rounded-lg text-white text-lg font-bold">+</button>
-                        </div>
-                    </div>
-                    <div class="col-span-6 md:col-span-4 lg:col-span-3 bg-gray-100 p-3 shadow">
-                        <img src="https://placekitten.com/900/900" alt="" class="w-full object-cover h-36">
-                        <div class="flex justify-between mt-1 items-center">
-                            <div class="left">
-                                <span class="">Womens Collection</span>
-                                <span class="text-orange-500">Rp155.000</span>
-                            </div>
-                            <button
-                                class="bg-primary hover:bg-slate-700 py-1 px-3 rounded-lg text-white text-lg font-bold">+</button>
-                        </div>
-                    </div>
-                    <div class="col-span-6 md:col-span-4 lg:col-span-3 bg-gray-100 p-3 shadow">
-                        <img src="https://placekitten.com/400/700" alt="" class="w-full object-cover h-36">
-                        <div class="flex justify-between mt-1 items-center">
-                            <div class="left">
-                                <span class="">Womens Collection</span>
-                                <span class="text-orange-500">Rp155.000</span>
-                            </div>
-                            <button
-                                class="bg-primary hover:bg-slate-700 py-1 px-3 rounded-lg text-white text-lg font-bold">+</button>
-                        </div>
-                    </div>
-                    <div class="col-span-6 md:col-span-4 lg:col-span-3 bg-gray-100 p-3 shadow">
-                        <img src="https://placekitten.com/950/950" alt="" class="w-full object-cover h-36">
-                        <div class="flex justify-between mt-1 items-center">
-                            <div class="left">
-                                <span class="">Womens Collection</span>
-                                <span class="text-orange-500">Rp155.000</span>
-                            </div>
-                            <button
-                                class="bg-primary hover:bg-slate-700 py-1 px-3 rounded-lg text-white text-lg font-bold">+</button>
-                        </div>
-                    </div>
-                    <div class="col-span-6 md:col-span-4 lg:col-span-3 bg-gray-100 p-3 shadow">
-                        <img src="https://placekitten.com/1000/900" alt="" class="w-full object-cover h-36">
-                        <div class="flex justify-between mt-1 items-center">
-                            <div class="left">
-                                <span class="">Womens Collection</span>
-                                <span class="text-orange-500">Rp155.000</span>
-                            </div>
-                            <button
-                                class="bg-primary hover:bg-slate-700 py-1 px-3 rounded-lg text-white text-lg font-bold">+</button>
-                        </div>
                     </div>
                 </div>
             </div>
